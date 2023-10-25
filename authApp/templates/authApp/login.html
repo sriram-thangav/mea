@@ -4,8 +4,22 @@
 Login
 {% endblock %}
 
-
 {% block main %}
-
-
+<div class="login-form container d-flex justify-content-center align-items-center" style="height: 90vh;">
+    <form method="post" class="border border-primary rounded p-4 p-sm-5" style="width: 100%; max-width: 400px;">
+        <h2 class="text-center">Login</h2>
+        {% csrf_token %}
+        <div class="mb-3">
+            <!-- {{ form.username.label_tag }} -->
+            {{ form.username}}
+        </div>
+        <div class="mb-3">
+            <!-- {{ form.password.label_tag }} -->
+            {{ form.password}}
+        </div>
+        <div class="button d-flex flex-row justify-content-center">
+            <button type="submit" class="btn btn-primary w-50">Login</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
